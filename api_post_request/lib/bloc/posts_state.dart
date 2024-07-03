@@ -1,6 +1,16 @@
-part of 'posts_bloc.dart';
+import 'package:equatable/equatable.dart';
 
-@immutable
-sealed class PostsState {}
+abstract class PostsState extends Equatable {
+  const PostsState();
 
-final class PostsInitial extends PostsState {}
+  @override
+  List<Object> get props => [];
+}
+
+class PostInitial extends PostsState {}
+
+class PostLoading extends PostsState {}
+
+class PostSuccess extends PostsState {}
+
+class PostFailure extends PostsState {}
